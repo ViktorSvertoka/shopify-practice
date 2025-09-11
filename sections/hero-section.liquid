@@ -1,0 +1,138 @@
+{% schema %}
+{
+  "name": "Hero Steve",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Заголовок",
+      "default": "Steve Jobs"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Цитата",
+      "default": "Have the courage to follow your heart and intuition. Everything else is secondary."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Текст кнопки",
+      "default": "Join to Fanclub"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Посилання кнопки",
+      "default": "/"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Фото"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="hero-section">
+  <div class="hero-container">
+    
+    <div class="hero-text">
+      <h1>{{ section.settings.title }}</h1>
+      <p class="quote">{{ section.settings.text }}</p>
+      
+      <div class="buttons">
+        <a href="{{ section.settings.button_url }}" class="btn primary">
+          {{ section.settings.button_label }}
+        </a>
+        <a href="#" class="btn secondary">Sign In</a>
+      </div>
+
+      <div class="socials">
+        <a href="#"><span>📸</span></a>
+        <a href="#"><span>📘</span></a>
+        <a href="#"><span>▶️</span></a>
+        <a href="#"><span>🐦</span></a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.title }}">
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+.hero-section {
+  padding: 60px 40px;
+  background: #fff;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-text .quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn.primary {
+  background: #000;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #333;
+}
+
+.btn.secondary {
+  border: 2px solid #000;
+  color: #000;
+}
+
+.btn.secondary:hover {
+  background: #000;
+  color: #fff;
+}
+
+.hero-image img {
+  max-width: 400px;
+  border-radius: 10px;
+}
+</style>
