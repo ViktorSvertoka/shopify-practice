@@ -245,7 +245,6 @@
   </head>
 
   <body class="gradient">
-    <p>Hello GIT</p>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -255,6 +254,8 @@
     {%- endif -%}
 
     {% sections 'header-group' %}
+
+     {% section 'custom-section' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}

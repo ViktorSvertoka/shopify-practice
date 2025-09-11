@@ -1,0 +1,149 @@
+{% schema %}
+{
+  "name": "Custom Section",
+  "settings": [
+  { "type": "text", "id": "title", "label": "Заголовок (h2)", "default": "Моя секція 🚀" },
+  { "type": "textarea", "id": "paragraph", "label": "Абзац (p)", "default": "Це приклад абзацу з текстом." },
+  { "type": "text", "id": "list_item1", "label": "Елемент списку 1", "default": "Перший пункт" },
+  { "type": "text", "id": "list_item2", "label": "Елемент списку 2", "default": "Другий пункт" },
+  { "type": "url", "id": "button_url", "label": "Посилання кнопки" },
+  { "type": "text", "id": "button_text", "label": "Текст кнопки", "default": "Натисни мене" },
+  { "type": "textarea", "id": "table_html", "label": "Таблиця (HTML)", "default": "<tr><td>Стовпець 1</td><td>Стовпець 2</td></tr>" }
+],
+  "presets": [
+    { "name": "Custom Section" }
+  ]
+}
+{% endschema %}
+
+<section class="demo-section">
+  <div class="container">
+   
+    <h2>{{ section.settings.title }}</h2>
+
+    <p>{{ section.settings.paragraph }}</p>
+  
+    <ul>
+      <li>{{ section.settings.list_item1 }}</li>
+      <li>{{ section.settings.list_item2 }}</li>
+    </ul>
+   
+   <img src="{{ 'devlovers-icon.png' | asset_url }}" alt="Моя картинка" class="custom-image">
+
+   <br>
+    
+    <a href="{{ section.settings.button_url }}" class="btn">
+      {{ section.settings.button_text }}
+    </a>
+
+    <table>
+      {{ section.settings.table_html }}
+    </table>
+
+    <form class="demo-form">
+      <input type="text" placeholder="Ім'я">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Повідомлення"></textarea>
+      <button type="submit">Відправити</button>
+    </form>
+  </div>
+</section>
+
+<style>
+.demo-section {
+    padding: 40px 20px;
+    background: #fafafa;
+    text-align: center;
+}
+
+.demo-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.demo-section p {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.demo-section ul {
+    list-style: disc;
+    margin: 0 auto 15px;
+    max-width: 300px;
+    text-align: left;
+}
+
+.demo-section img {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+.custom-image {
+  width: 150px;         
+  height: auto;         
+  border-radius: 12px;  
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+  transition: transform 0.3s ease;       
+}
+
+.custom-image:hover {
+  transform: scale(1.05);
+}
+
+.demo-section .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007ace;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.demo-section .btn:hover {
+    background: #005fa3;
+}
+
+.demo-section table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    min-width: 200px;
+}
+
+.demo-section table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+}
+
+.demo-section .demo-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.demo-section input,
+.demo-section textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.demo-section button {
+    padding: 10px;
+    border: none;
+    background: #28a745;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.demo-section button:hover {
+    background: #1e7e34;
+}
+</style>
