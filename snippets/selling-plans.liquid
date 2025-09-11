@@ -1,0 +1,97 @@
+{%- if product.selling_plan_groups.size > 0 -%}
+  <product-subscriptions data-module="product/subscriptions">
+    <input type="hidden" name="selling_plan" value="">
+
+    {%- assign product_variant = product.selected_or_first_available_variant -%}
+
+    {%- for group in product.selling_plan_groups -%}
+      {%- liquid
+        assign plan_allocation = false
+
+        for selling_plan_allocation in product_variant.selling_plan_allocations
+          if group.id == selling_plan_allocation.selling_plan_group_id
+            assign plan_allocation = selling_plan_allocation
+            break
+          endif
+        endfor
+
+        assign percentage_amount = false
+
+        for price_adjustment in plan_allocation.selling_plan.price_adjustments
+          assign percentage_amount = price_adjustment.value | plus: 0
+          break
+        endfor
+      -%}
+
+      <div>
+        {%-  if forloop.first -%}
+          <div>
+            <input
+              type="radio"
+              name="purchase_option"
+              id="selling_group_{{- group.id -}}_onetime"
+              value="onetime"
+              class="absolute left-0 -translate-y-1/2 top-1/2"
+              checked
+            >
+            <label for="selling_group_{{- group.id -}}_onetime"
+              >{{- 'products.product.selling_plans.one_time_purchase' | t }}{{ plan_allocation.compare_at_price | money -}}
+            </label>
+          </div>
+        {%- endif -%}
+
+        {%- for selling_plan in group.selling_plans -%}
+          {%- if selling_plan.id -%}
+          {%- unless percentage_amount == false %}
+            <div class="relative flex flex-wrap pl-6">
+              <input
+                type="radio"
+                name="purchase_option"
+                id="selling_group_{{- group.id -}}_subscription"
+                value="{{ selling_plan.id }}"
+              >
+    
+              <label for="selling_group_{{- group.id -}}_subscription">
+                {{ group.name }}
+                {{ plan_allocation.price | money }}
+                {%- unless percentage_amount == 0 -%}
+                  <span style="font-size: 14px;">(Save {{ percentage_amount }}%)</span>
+                {%- endunless -%}
+              </label>
+    
+              <div class="hidden w-full pt-2 peer-checked:block">
+                <div class="relative inline-block border-b border-gray-700 border-solid">
+                  <select
+                    name="purchase_option_values"
+                    id="selling_group_{{- group.id -}}_options"
+                    class="pr-4 text-sm bg-transparent appearance-none"
+                  >
+                    {%- for plan in group.selling_plans -%}
+                      <option
+                        value="{{- plan.id -}}"
+                        {% if forloop.first %}
+                          selected
+                        {% endif %}
+                      >
+                        {{- plan.name -}}
+                      </option>
+                    {%- endfor -%}
+                  </select>
+    
+                  <svg
+                    class="absolute right-0 w-2.5 -translate-y-1/2 top-1/2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                  >
+                    <g fill="currentColor"><path d="M14.769,5.36a1,1,0,0,0-1.41-.128L8,9.7,2.641,5.232A1,1,0,1,0,1.359,6.768l6,5a1,1,0,0,0,1.282,0l6-5A1,1,0,0,0,14.769,5.36Z"></path></g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          {%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
+  </product-subscriptions>
+{%- endif -%}
