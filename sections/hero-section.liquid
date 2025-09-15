@@ -16,9 +16,15 @@
     },
     {
       "type": "text",
-      "id": "button_label",
+      "id": "button_primary",
       "label": "Текст кнопки",
       "default": "Join to Fanclub"
+    },
+    {
+      "type": "text",
+      "id": "button_secondary",
+      "label": "Текст кнопки",
+      "default": "Sign In"
     },
     {
       "type": "url",
@@ -35,31 +41,33 @@
 }
 {% endschema %}
 
-<section class="hero-section">
-  <div class="hero-container">
+<section class="hero">
+  <div class="hero__container">
     
-    <div class="hero-text">
-      <h1>{{ section.settings.title }}</h1>
-      <p class="quote">{{ section.settings.text }}</p>
+    <div class="hero__content">
+      <h1 class="hero__title">{{ section.settings.title }}</h1>
+      <p class="hero__quote">{{ section.settings.text }}</p>
       
-      <div class="buttons">
-        <a href="{{ section.settings.button_url }}" class="btn primary">
-          {{ section.settings.button_label }}
+      <div class="hero__actions">
+        <a href="{{ section.settings.button_url }}" class="hero__button hero__button--primary">
+          {{ section.settings.button_primary }}
         </a>
-        <a href="#" class="btn secondary">Sign In</a>
+        <a href="{{ section.settings.button_url }}" class="hero__button hero__button--secondary">
+          {{ section.settings.button_secondary }}
+        </a>
       </div>
 
-      <div class="socials">
-        <a href="#"><span>📸</span></a>
-        <a href="#"><span>📘</span></a>
-        <a href="#"><span>▶️</span></a>
-        <a href="#"><span>🐦</span></a>
+      <div class="hero__socials">
+        <a href="#" class="hero__social-link"><span>📸</span></a>
+        <a href="#" class="hero__social-link"><span>📘</span></a>
+        <a href="#" class="hero__social-link"><span>▶️</span></a>
+        <a href="#" class="hero__social-link"><span>🐦</span></a>
       </div>
     </div>
 
-    <div class="hero-image">
+    <div class="hero__image">
       {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.title }}">
+        <img class="hero__img" src="{{ section.settings.image | image_url }}" alt="{{ section.settings.title }}">
       {% endif %}
     </div>
 
@@ -67,91 +75,157 @@
 </section>
 
 <style>
-.hero-section {
-  background: #fff;
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-text: #555;
 }
 
-.hero-container {
+.hero {
+  background: var(--color-white);
+}
+
+.hero__container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  justify-content: center;
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
 }
 
-.hero-text {
+@media (min-width: 768px) {
+  .hero__container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+.hero__content {
   flex: 1;
 }
 
-.hero-text h1 {
-  font-size: 100px;
+.hero__title {
+  font-size: 36px;
   font-weight: 900;
-  margin-bottom: 20px;
-  position: absolute;
-  top: 15%;   
-  left: 22%;   
-  transform: translate(-50%, -50%); 
+  text-align: center;
+  margin-bottom: 20px; 
+
+  @media (min-width: 768px) {
+    font-size: 100px;
+    position: absolute;
+    top: 15%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+  }
 }
 
-.hero-text .quote {
-  font-size: 24px;
+.hero__quote {
+  font-size: 18px;
   font-style: italic;
-  color: #555;
-  margin-bottom: 30px;
-  position: absolute;
-  top: 38%;   
-  left: 26%;   
-  transform: translate(-50%, -50%); 
-  width: 630px;
-  height: 132px; 
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 30px; 
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    position: absolute;
+    top: 38%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    width: 630px;
+    height: 132px;
+    text-align: left;
+  }
 }
 
-.buttons {
+.hero__actions {
   display: flex;
-  gap: 20px;
-  margin-top: 80px;
+  flex-direction: column; 
+  gap: 15px;
+  align-items: center;
   margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin-top: 80px;
+    gap: 20px;
+  }
 }
 
-.btn {
-  display: flex;
+.hero__button {
+ display: flex;
   align-items: center;
   justify-content: center;
   width: 252px;
-  height: 70px; 
+  height: 50px; 
   border-radius: 50px;
   font-weight: bold;
   font-size: 18px;
   text-decoration: none;
   transition: all 0.3s;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    height: 70px;
+    font-size: 18px;
+  }
 }
 
-.btn.primary {
-  background: #000;
-  color: #fff;
+
+.hero__button--primary {
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
-.btn.primary:hover {
-  background: #fff;
-  color: #000;
-  border: 2px solid #000;
+.hero__button--primary:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 2px solid var(--color-black);
 }
 
-.btn.secondary {
-  border: 2px solid #000;
-  color: #000;
+.hero__button--secondary {
+  border: 2px solid var(--color-black);
+  color: var(--color-black);
 }
 
-.btn.secondary:hover {
-  background: #000;
-  color: #fff;
+.hero__button--secondary:hover {
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
-.hero-image img {
-  width: 750px;
+.hero__image .hero__img {
+  width: 350px;
   display: block;
+
+  @media (min-width: 768px) {
+  width: 750px;
+ }
+}
+
+.hero__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+
+  @media (min-width: 768px) {
+   display: flex;
+   align-items: left;
+    justify-content: left;
+  gap: 10px;
+  margin-top: 20px;
+ }
+}
+
+.hero__social-link {
+  font-size: 24px;
+  text-decoration: none;
 }
 </style>
