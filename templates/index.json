@@ -130,6 +130,34 @@
         "padding_bottom": 60
       }
     },
+    "featured_collection_pPyBCG": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "automated-collection",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "38cdf60f-e431-43b5-aac3-7e6215447d67": {
       "type": "collection-list",
       "blocks": {
@@ -179,6 +207,7 @@
     "6a3bb789-ce10-45f5-ae67-e2063ef8c76b",
     "featured_collection",
     "f1552b18-6017-4231-810d-74e61da22c37",
+    "featured_collection_pPyBCG",
     "38cdf60f-e431-43b5-aac3-7e6215447d67",
     "contact_form_ydPtyf"
   ]
