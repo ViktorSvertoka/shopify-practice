@@ -255,7 +255,9 @@
 
     {% sections 'header-group' %}
     
-    {% section 'hero-section' %}
+    {% if template == 'index' %}
+      {% section 'hero-section' %}
+    {% endif %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
