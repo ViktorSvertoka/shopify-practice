@@ -54,7 +54,7 @@
       "type": "custom-liquid",
       "name": "hero",
       "settings": {
-        "custom_liquid": "",
+        "custom_liquid": "HERO SECTION",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
