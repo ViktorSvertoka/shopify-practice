@@ -201,6 +201,54 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_banner_nCmPLX": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_pEdDx6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_NkrLpN": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_43PWmA": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_pEdDx6",
+        "text_NkrLpN",
+        "buttons_43PWmA"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
     }
   },
   "order": [
@@ -209,6 +257,7 @@
     "f1552b18-6017-4231-810d-74e61da22c37",
     "featured_collection_pPyBCG",
     "38cdf60f-e431-43b5-aac3-7e6215447d67",
-    "contact_form_ydPtyf"
+    "contact_form_ydPtyf",
+    "image_banner_nCmPLX"
   ]
 }
