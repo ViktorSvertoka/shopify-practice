@@ -17,7 +17,8 @@
         "text": "Have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary. — Steve Jobs",
         "button_primary": "Join to Fanclub",
         "button_secondary": "Sign In",
-        "button_url": "/"
+        "button_url": "/",
+        "image": "shopify://shop_images/steve.jpg"
       }
     },
     "6a3bb789-ce10-45f5-ae67-e2063ef8c76b": {
@@ -242,7 +243,11 @@
           }
         }
       },
-      "block_order": ["heading_pEdDx6", "text_NkrLpN", "buttons_43PWmA"],
+      "block_order": [
+        "heading_pEdDx6",
+        "text_NkrLpN",
+        "buttons_43PWmA"
+      ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image_overlay_opacity": 0,
