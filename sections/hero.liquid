@@ -119,9 +119,11 @@
   font-size: 36px;
   font-weight: 900;
   text-align: center;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .hero__title {
     font-size: 100px;
     position: absolute;
     top: 15%;
@@ -136,9 +138,11 @@
   font-style: italic;
   color: var(--color-text);
   text-align: center;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .hero__quote {
     font-size: 24px;
     position: absolute;
     top: 38%;
@@ -152,12 +156,14 @@
 
 .hero__actions {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 15px;
   align-items: center;
   margin-bottom: 30px;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .hero__actions {
     flex-direction: row;
     margin-top: 80px;
     gap: 20px;
@@ -165,24 +171,25 @@
 }
 
 .hero__button {
- display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 252px;
-  height: 50px; 
+  height: 50px;
   border-radius: 50px;
   font-weight: bold;
   font-size: 18px;
   text-decoration: none;
   transition: all 0.3s;
   text-transform: uppercase;
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .hero__button {
     height: 70px;
     font-size: 18px;
   }
 }
-
 
 .hero__button--primary {
   background: var(--color-black);
@@ -208,10 +215,12 @@
 .hero__image .hero__img {
   width: 350px;
   display: block;
+}
 
-  @media (min-width: 768px) {
-  width: 750px;
- }
+@media (min-width: 768px) {
+  .hero__image .hero__img {
+    width: 750px;
+  }
 }
 
 .hero__socials {
@@ -220,18 +229,20 @@
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+}
 
-  @media (min-width: 768px) {
-   display: flex;
-   align-items: left;
-    justify-content: left;
-  gap: 10px;
-  margin-top: 20px;
- }
+@media (min-width: 768px) {
+  .hero__socials {
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+  }
 }
 
 .hero__social-link {
   font-size: 24px;
   text-decoration: none;
 }
+
 </style>
