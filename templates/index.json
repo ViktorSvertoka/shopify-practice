@@ -10,7 +10,7 @@
 {
   "sections": {
     "hero_section_TqUcbw": {
-      "type": "hero-section",
+      "type": "hero",
       "name": "Hero Steve",
       "settings": {
         "title": "Steve Jobs",
@@ -242,11 +242,7 @@
           }
         }
       },
-      "block_order": [
-        "heading_pEdDx6",
-        "text_NkrLpN",
-        "buttons_43PWmA"
-      ],
+      "block_order": ["heading_pEdDx6", "text_NkrLpN", "buttons_43PWmA"],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image_overlay_opacity": 0,
