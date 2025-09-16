@@ -9,6 +9,17 @@
  */
 {
   "sections": {
+    "hero_section_TqUcbw": {
+      "type": "hero-section",
+      "name": "Hero Steve",
+      "settings": {
+        "title": "Steve Jobs",
+        "text": "Have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary. — Steve Jobs",
+        "button_primary": "Join to Fanclub",
+        "button_secondary": "Sign In",
+        "button_url": "/"
+      }
+    },
     "6a3bb789-ce10-45f5-ae67-e2063ef8c76b": {
       "type": "image-banner",
       "blocks": {
@@ -252,6 +263,7 @@
     }
   },
   "order": [
+    "hero_section_TqUcbw",
     "6a3bb789-ce10-45f5-ae67-e2063ef8c76b",
     "featured_collection",
     "f1552b18-6017-4231-810d-74e61da22c37",
