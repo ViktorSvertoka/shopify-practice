@@ -49,21 +49,10 @@
         "padding_top": 8,
         "padding_bottom": 8
       }
-    },
-    "custom_liquid_kgfr9F": {
-      "type": "custom-liquid",
-      "name": "hero",
-      "settings": {
-        "custom_liquid": "HERO SECTION",
-        "color_scheme": "background-1",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "custom_liquid_kgfr9F"
+    "header"
   ]
 }
