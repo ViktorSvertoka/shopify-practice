@@ -27,7 +27,7 @@
         "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-0": {
           "type": "heading",
           "settings": {
-            "heading": "Hello Andrew!",
+            "heading": "Hello Shopify!",
             "heading_size": "h1"
           }
         },
@@ -243,11 +243,7 @@
           }
         }
       },
-      "block_order": [
-        "heading_pEdDx6",
-        "text_NkrLpN",
-        "buttons_43PWmA"
-      ],
+      "block_order": ["heading_pEdDx6", "text_NkrLpN", "buttons_43PWmA"],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image_overlay_opacity": 0,
