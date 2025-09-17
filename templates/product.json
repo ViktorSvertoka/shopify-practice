@@ -54,7 +54,7 @@
           "settings": {
             "heading": "Modal Info",
             "icon": "silhouette",
-            "content": "<p>{{ metaobjects.modal_info.jasmine.name.value }} is {{ metaobjects.modal_info.jasmine.height | metafield_tag }} and wearing size {{ product.metafields.custom.wearing_size_2.value }}.<br/><br/>{{ metaobjects.modal_info.jasmine.name.value }}'s measurements: </p><ul><li>Bust: {{ metaobjects.modal_info.jasmine.bust | metafield_tag }}</li><li>Waist: {{ metaobjects.modal_info.jasmine.waist | metafield_tag }}</li><li>Hips:  {{ metaobjects.modal_info.jasmine.hips | metafield_tag }}</li></ul>",
+            "content": "<p>{{ product.metafields.custom.model_info_2.value.name.value }} is {{ product.metafields.custom.model_info_2.value.height | metafield_tag }} and wearing size {{ product.metafields.custom.wearing_size_2.value }}.<br/><br/>{{ product.metafields.custom.model_info_2.value.name.value }}'s measurements: </p><ul><li>Bust: {{ product.metafields.custom.model_info_2.value.bust | metafield_tag }}</li><li>Waist: {{ product.metafields.custom.model_info_2.value.waist | metafield_tag }}</li><li>Hips:  {{ product.metafields.custom.model_info_2.value.hips | metafield_tag }}</li></ul>",
             "page": ""
           }
         },
