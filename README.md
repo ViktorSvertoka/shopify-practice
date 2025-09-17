@@ -29,3 +29,11 @@ update page - shopify theme push -e development
 6. Додав їм фото
 
 ![Results](./screens/screen_06.png)
+
+7. Додав мета дані для опису товару
+
+![Results](./screens/screen_07.png)
+
+8. Протестував webhooks
+
+![Results](./screens/screen_08.png)
