@@ -37,3 +37,7 @@ update page - shopify theme push -e development
 8. Протестував webhooks
 
 ![Results](./screens/screen_08.png)
+
+9. Встановив та потестив Shopify GraphiQL App
+
+![Results](./screens/screen_09.png)
